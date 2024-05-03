@@ -18,7 +18,6 @@ local Tab = Window:MakeTab({
 	Name = "All you need",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-  ColorPicker:Set(Color3.fromRGB(255,255,255))
 })
 
 --[[
