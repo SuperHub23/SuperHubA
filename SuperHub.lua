@@ -114,4 +114,12 @@ Tab:AddButton({
 Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
+
+local Section = Tab:AddSection({
+	Name = "Comming Soon!"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
 OrionLib:Init()
