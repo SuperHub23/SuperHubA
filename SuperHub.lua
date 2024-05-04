@@ -152,4 +152,31 @@ ValueName = <string> - The text after the value number.
 Callback = <function> - The function of the slider.
 ]]
 
+Tab:AddSlider({
+    Name = "JumpPower",
+    Min = 3,
+    Max = 200,
+    Default = 3,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "JumpPower",
+    Callback = function(Value)
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+    end
+})
+
+
+
+--[[
+Name = speedvv2> - The name of the slider.
+Min = <number> - The minimal value of the slider.
+Max = <number> - The maxium value of the slider.
+Increment = <number> - How much the slider will change value when dragging.
+Default = <number> - The default value of the slider.
+ValueName = <string> - The text after the value number.
+Callback = <function> - The function of the slider.
+]]
+
+
+
 OrionLib:Init()
