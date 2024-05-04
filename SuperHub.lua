@@ -116,10 +116,40 @@ Callback = <function> - The function of the button.
 ]]
 
 local Section = Tab:AddSection({
-	Name = "Comming Soon!"
+	Name = "Speed"
 })
 
 --[[
 Name = <string> - The name of the section.
 ]]
+
+Tab:AddSlider({
+    Name = "Speed",
+    Min = 16,
+    Max = 200,
+    Default = 16,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "speed",
+    Callback = function(Value)
+        getgenv().WalkSpeedValue = Value; --Enter your speed amount here
+        local Player = game:service'Players'.LocalPlayer;
+        Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end)
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        print(Value)
+    end
+})
+
+--[[
+Name = speedvv1> - The name of the slider.
+Min = <number> - The minimal value of the slider.
+Max = <number> - The maxium value of the slider.
+Increment = <number> - How much the slider will change value when dragging.
+Default = <number> - The default value of the slider.
+ValueName = <string> - The text after the value number.
+Callback = <function> - The function of the slider.
+]]
+
 OrionLib:Init()
